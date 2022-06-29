@@ -23,6 +23,14 @@ class Contato
     ~Contato();
     bool thereData();
     string getContato();
+    string getNome();
+    string getSobrenome();
+    string getDDD();
+    string getNumero();
+    bool setNome(string nome);
+    bool setSobrenome(string sobrenome);
+    bool setDDD(string ddd);
+    bool setNumero(string numero);
 
 };
 

@@ -20,9 +20,11 @@ class Agenda
     public:
     Agenda(string nome = "Pessoal");
     ~Agenda();
-    string getNome();
+    string getNomeAgenda();
+    int getSizeAgenda();
     string getLista();
     bool addExistentContact(Contato &contato);
+    bool newContactFromCSV(string csv);
     bool newContact();
 
 };

@@ -5,11 +5,77 @@ using namespace std;
 
 bool app()
 {
-
     Conta exe;
-    exe.newAgenda();
-    exe.deleteAgenda();
-    exe.loadAgenda("../database/agenda.csv");
+
+    bool loop = true;
+    bool loop2 = true;
+    
+    do
+    {
+        int value;
+        cout << endl;
+        cout << "1) Agenda" << endl;
+        cout << "2) Sair" << endl;
+        cout << endl << "> ";
+        cin >> value;
+
+        system("clear||cls");
+
+        switch(value)
+        {
+            case 1:
+                do
+                {
+
+                    int value2;
+                    cout << endl;
+                    cout << "1) Abrir Agenda" << endl;
+                    //cout << "2) Nova Agenda" << endl;
+                    //cout << "3) Deletar Agenda" << endl;
+                    cout << "2) Sair" << endl;
+                    cout << endl << "> ";
+                    cin >> value2;
+
+                    system("clear||cls");
+
+                    switch(value2)
+                    {
+                        case 1:
+
+                            system("clear||cls");
+
+                            exe.loadAgenda("database/agenda.csv");
+                            cout << endl << exe.exibeAgenda() << endl;
+                        break;
+
+                        case 2:
+                        
+                            loop = true;
+                            loop2 = false;
+                        break;
+
+                    }
+
+                }
+                while(loop2);
+
+            break;
+
+            case 2:
+                exit(0);
+                loop = false;
+            break;
+            
+            default:
+                break;
+        }
+
+    } 
+    while(loop);
+    
+
+
+
 
 }
 

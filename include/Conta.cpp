@@ -22,7 +22,7 @@ bool Conta::newAgenda()
     {
 
         agenda = new Agenda();
-        cout << "Agenda " << agenda->getNome() << " Criada!" << endl;
+        cout << "Agenda " << agenda->getNomeAgenda() << " Criada!" << endl;
 
     return true;
     }
@@ -37,7 +37,7 @@ bool Conta::deleteAgenda()
     {
 
         delete agenda;
-        cout << "Agenda " << agenda->getNome() << " Apagada!" << endl;
+        cout << "Agenda " << agenda->getNomeAgenda() << " Apagada!" << endl;
 
     return true;
     }
@@ -54,21 +54,42 @@ bool Conta::loadAgenda(string url)
         string auxStream;
         stringstream stream;
 
+        string nomeAgenda;
+        int qtdContatos;
 
         do
         {
 
             getline(read, auxStream, ',');
-            cout << auxStream << endl;
-            if(auxStream == "true") cout << "Há uma agenda!" << endl;
-            stream << auxStream;
+            
+            if(auxStream == "true")
+            {
+
+                getline(read, nomeAgenda, ',');
+                getline(read, auxStream, ',');
+                qtdContatos = stoi(auxStream);
+                getline(read, auxStream, '\r');
+                stream << qtdContatos << "," << auxStream;
+
+            }
+            else return false;
+            
 
         } while (read.good());
-        cout << stream.str() << endl;
+
+        agenda = new Agenda(nomeAgenda);
+        agenda->newContactFromCSV(stream.str());
+
         read.close();
 
     return(stream.str() != "");
     }
 
 return false;
+}
+
+string Conta::exibeAgenda()
+{
+
+return agenda->getLista();
 }

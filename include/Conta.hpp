@@ -22,6 +22,7 @@ class Conta
     bool newAgenda();
     bool deleteAgenda();
     bool loadAgenda(string url);
+    string exibeAgenda();
 
 };
 

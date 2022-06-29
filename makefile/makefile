@@ -14,7 +14,7 @@ app.o: ../app.cpp ../include/Conta.hpp
 contato.o: ../include/Contato.hpp
 	@g++ ${CFLAGS} ../include/Contato.cpp
 
-agenda.o: ../include/agenda.hpp ../include/Contato.hpp
+agenda.o: ../include/Agenda.hpp ../include/Contato.hpp
 	@g++ ${CFLAGS} ../include/Agenda.cpp
 
 conta.o: ../include/Conta.hpp ../include/Agenda.hpp ../include/Contato.hpp
