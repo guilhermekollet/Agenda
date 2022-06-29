@@ -3,11 +3,22 @@
 Contato::Contato()
 {
 
-    _nome = "";
-    _sobrenome = "";
+    _name = "";
+    _lastName = "";
     _ddd = "";
-    _numero = "";
+    _number = "";
     _state = false;
+
+}
+
+Contato::Contato(string name, string lastName, string ddd, string number)
+{
+
+    _name = name;
+    _lastName= lastName;
+    _ddd = ddd;
+    _number = number;
+    _state = true;
 
 }
 
@@ -19,7 +30,7 @@ Contato::~Contato()
 bool Contato::thereData()
 {
 
-    if(_nome != "" && _ddd != "" && _numero != "") _state = true;
+    if(_name != "" && _ddd != "" && _number != "") _state = true;
 
 return _state;
 }
@@ -28,27 +39,27 @@ string Contato::getContato()
 {
 
     stringstream ss;
-    ss << "Nome: " << _nome << " | Sobrenome: " << _sobrenome << " | DDD: (" << _ddd << ") | Numero: " << _numero;
+    ss << "Nome: " << _name << " | Sobrenome: " << _lastName << " | DDD: (" << _ddd << ") | Numero: " << _number;
 
 return ss.str();
 }
 
-string Contato::getNome()
+string Contato::getName()
 {
 
-return _nome;    
+return _name;    
 }
 
-string Contato::getNumero()
+string Contato::getNumber()
 {
 
-return _numero;
+return _number;
 }
 
-string Contato::getSobrenome()
+string Contato::getLastName()
 {
 
-return _sobrenome;
+return _lastName;
 }
 
 string Contato::getDDD()
@@ -63,7 +74,7 @@ bool Contato::setNome(string nome)
     if(nome != "")
     {
 
-        _nome = nome;
+        _name = nome;
 
     return true;
     }
@@ -71,13 +82,13 @@ bool Contato::setNome(string nome)
 return false;
 }
 
-bool Contato::setSobrenome(string sobrenome)
+bool Contato::setSobrenome(string lastName)
 {
 
-    if(sobrenome != "")
+    if(lastName != "")
     {
 
-        _sobrenome = sobrenome;
+        _lastName = lastName;
 
     return true;
     }
@@ -99,13 +110,13 @@ bool Contato::setDDD(string ddd)
 return false;
 }
 
-bool Contato::setNumero(string numero)
+bool Contato::setNumero(string number)
 {
 
-    if(numero != "")
+    if(number != "")
     {
 
-        _numero = numero;
+        _number = number;
 
     return true;
     }

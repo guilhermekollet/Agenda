@@ -12,25 +12,26 @@ class Contato
 {
 
     private:
-    string _nome;
-    string _sobrenome;
+    string _name;
+    string _lastName;
     string _ddd;
-    string _numero;
+    string _number;
     bool _state;
 
     public:
     Contato();
+    Contato(string name, string lastName, string ddd, string number);
     ~Contato();
     bool thereData();
     string getContato();
-    string getNome();
-    string getSobrenome();
+    string getName();
+    string getLastName();
     string getDDD();
-    string getNumero();
-    bool setNome(string nome);
-    bool setSobrenome(string sobrenome);
+    string getNumber();
+    bool setNome(string name);
+    bool setSobrenome(string lastName);
     bool setDDD(string ddd);
-    bool setNumero(string numero);
+    bool setNumero(string number);
 
 };
 

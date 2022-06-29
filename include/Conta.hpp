@@ -14,11 +14,13 @@ class Conta
 
     private:
     Agenda *agenda;
-    string database;
 
     public:
     Conta();
     ~Conta();
+
+    Agenda *getAgenda();
+
     bool newAgenda();
     bool deleteAgenda();
     bool loadAgenda(string url);

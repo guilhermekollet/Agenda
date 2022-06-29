@@ -32,7 +32,8 @@ bool app()
                     cout << "1) Abrir Agenda" << endl;
                     //cout << "2) Nova Agenda" << endl;
                     //cout << "3) Deletar Agenda" << endl;
-                    cout << "2) Sair" << endl;
+                    cout << "2) Propriedades" << endl;
+                    cout << "3) Sair" << endl;
                     cout << endl << "> ";
                     cin >> value2;
 
@@ -49,6 +50,24 @@ bool app()
                         break;
 
                         case 2:
+
+                            if(exe.getAgenda() == nullptr)
+                            {
+                                
+                                cout << "Nao ha nenhuma agenda aberta nessa conta ainda." << endl;
+                                
+                            }
+                            else
+                            {
+
+                                cout << exe.getAgenda()->getProperties() << endl;
+
+                            }
+
+
+                        break;
+
+                        case 3:
 
                             loop = true;
                             loop2 = false;
