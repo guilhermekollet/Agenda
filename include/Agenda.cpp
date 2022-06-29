@@ -94,7 +94,7 @@ bool Agenda::newContactFromCSV(string csv)
                 getline(buffer, auxStream, ',');
                 c->setNumero(auxStream);
 
-                addExistentContact(*c);
+                addContact(*c);
                 delete c;
             }
 
@@ -106,7 +106,7 @@ bool Agenda::newContactFromCSV(string csv)
 return false;
 }
 
-bool Agenda::addExistentContact(Contato &contato)
+bool Agenda::addContact(Contato &contato)
 {
 
     if(contato.getNumero() != "")

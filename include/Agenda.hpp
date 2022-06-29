@@ -23,7 +23,7 @@ class Agenda
     string getNomeAgenda();
     int getSizeAgenda();
     string getLista();
-    bool addExistentContact(Contato &contato);
+    bool addContact(Contato &contato);
     bool newContactFromCSV(string csv);
     bool newContact();
 
