@@ -44,12 +44,12 @@ bool app()
 
                             system("clear||cls");
 
-                            exe.loadAgenda("database/agenda.csv");
+                            exe.loadAgenda("../database/agenda.csv");
                             cout << endl << exe.exibeAgenda() << endl;
                         break;
 
                         case 2:
-                        
+
                             loop = true;
                             loop2 = false;
                         break;
