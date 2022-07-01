@@ -234,7 +234,7 @@ bool Agenda::setAgendaToCSV()
 
     }
 
-
+/*
     ofstream writer(_hrefDataBase, ios::trunc);
     if(writer.is_open())
     {
@@ -244,7 +244,7 @@ bool Agenda::setAgendaToCSV()
     }
 
     writer.close();
-
+*/
 }
 
 bool Agenda::addContact(Contato &contato)

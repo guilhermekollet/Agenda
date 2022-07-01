@@ -14,6 +14,7 @@ class Conta
 
     private:
     Agenda *agenda;
+    vector<Agenda> _lista;
 
     public:
     Conta();
