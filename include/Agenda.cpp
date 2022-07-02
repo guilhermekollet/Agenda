@@ -21,7 +21,18 @@ string Agenda::getTime()
     stringstream data;
     data << "Data: ";
     
-    data << tempo->tm_mday << "/";
+    if(tempo->tm_mday < 10)
+    {
+
+        data << "0" << tempo->tm_mday << "/";
+
+    }
+    else
+    {
+        data << tempo->tm_mday << "/";
+        
+    }
+
     if(tempo->tm_mon < 10)
     {
         

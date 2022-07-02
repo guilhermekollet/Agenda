@@ -29,11 +29,12 @@ bool app()
 
                     int value2;
                     cout << endl;
-                    cout << "1) Abrir Agenda" << endl;
+                    cout << "1) Minhas agendas" << endl;
+                    cout << "2) Carregar Agenda" << endl;
                     //cout << "2) Nova Agenda" << endl;
                     //cout << "3) Deletar Agenda" << endl;
-                    cout << "2) Propriedades" << endl;
-                    cout << "3) Sair" << endl;
+                    cout << "3) Propriedades" << endl;
+                    cout << "4) Sair" << endl;
                     cout << endl << "> ";
                     cin >> value2;
 
@@ -41,7 +42,14 @@ bool app()
 
                     switch(value2)
                     {
+                        
                         case 1:
+
+                            system("clear||cls");
+                            cout << "Minhas Agendas" << endl << exe.exibeAgendas();
+                            break;
+                        
+                        case 2:
 
                             system("clear||cls");
 
@@ -49,7 +57,7 @@ bool app()
                             cout << endl << exe.exibeAgenda() << endl;
                         break;
 
-                        case 2:
+                        case 3:
 
                             if(exe.getAgenda() == nullptr)
                             {
@@ -67,7 +75,7 @@ bool app()
 
                         break;
 
-                        case 3:
+                        case 4:
 
                             loop = true;
                             loop2 = false;

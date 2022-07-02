@@ -11,7 +11,11 @@ Conta::~Conta()
 {
 
     if(agenda != nullptr) delete agenda;
-    agenda = nullptr;
+    
+    for(int i=0; i < _lista.size(); i++)
+    {
+        delete &_lista.at(i);
+    }
 
 }
 
@@ -29,6 +33,7 @@ bool Conta::newAgenda()
 
         agenda = new Agenda();
         cout << "Agenda " << agenda->getAgendaName() << " Criada!" << endl;
+        _lista.push_back(*agenda);
 
     return true;
     }
@@ -84,6 +89,7 @@ bool Conta::loadAgenda(string url)
         } while (read.good());
 
         agenda = new Agenda(nomeAgenda);
+        _lista.push_back(*agenda);
         agenda->getAgendaFromCSV(stream.str());
 
         read.close();
@@ -98,4 +104,18 @@ string Conta::exibeAgenda()
 {
 
 return agenda->getLista();
+}
+
+string Conta::exibeAgendas()
+{
+
+    stringstream ss;
+    for(int i=0; i < _lista.size(); i++)
+    {
+
+        ss << _lista.at(i).getProperties() << endl;
+
+    }
+
+return ss.str();
 }
